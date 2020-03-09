@@ -101,23 +101,133 @@ Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 
 Output:
 
+```
+                             OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.951
+Model:                            OLS   Adj. R-squared:                  0.948
+Method:                 Least Squares   F-statistic:                     296.0
+Date:                Mon, 09 Mar 2020   Prob (F-statistic):           4.53e-30
+Time:                        21:50:39   Log-Likelihood:                -525.39
+No. Observations:                  50   AIC:                             1059.
+Df Residuals:                      46   BIC:                             1066.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       5.012e+04   6572.353      7.626      0.000    3.69e+04    6.34e+04
+x1             0.8057      0.045     17.846      0.000       0.715       0.897
+x2            -0.0268      0.051     -0.526      0.602      -0.130       0.076
+x3             0.0272      0.016      1.655      0.105      -0.006       0.060
+==============================================================================
+Omnibus:                       14.838   Durbin-Watson:                   1.282
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               21.442
+Skew:                          -0.949   Prob(JB):                     2.21e-05
+Kurtosis:                       5.586   Cond. No.                     1.40e+06
+==============================================================================
+```
 
-Administration has the highest p-value (>0.05) so that variable as been removed, we will run Reg_OLS and review the metrics again
+Administration has the highest p-value (0.602 > 0.05) so that variable as been removed, we will run Reg_OLS and review the metrics
 
+```
 X_opt = X[:,[0,3,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-#print(Reg_OLS.summary())
+print(Reg_OLS.summary())
+```
 
-Marketing spend has the highest p-value (>0.05)  so that variable as been removed, we will run Reg_OLS and review the metrics again
+```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.950
+Model:                            OLS   Adj. R-squared:                  0.948
+Method:                 Least Squares   F-statistic:                     450.8
+Date:                Mon, 09 Mar 2020   Prob (F-statistic):           2.16e-31
+Time:                        21:53:12   Log-Likelihood:                -525.54
+No. Observations:                  50   AIC:                             1057.
+Df Residuals:                      47   BIC:                             1063.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       4.698e+04   2689.933     17.464      0.000    4.16e+04    5.24e+04
+x1             0.7966      0.041     19.266      0.000       0.713       0.880
+x2             0.0299      0.016      1.927      0.060      -0.001       0.061
+==============================================================================
+Omnibus:                       14.677   Durbin-Watson:                   1.257
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               21.161
+Skew:                          -0.939   Prob(JB):                     2.54e-05
+Kurtosis:                       5.575   Cond. No.                     5.32e+05
+==============================================================================
+```
+Marketing spend has the highest p-value (0.06 > 0.05)  so that variable as been removed, we will run Reg_OLS and review the metrics
 
+```
 X_opt = X[:,[0,3]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 #print(Reg_OLS.summary())
+```
+Output:
 
-As the adjusted R-squared has decreased, we will add the "Marketing Spend" variable back and declare this our multiple linear regression model
-We conclude that we should invest in companies that are investing highly in "R&D" (Research and Development), with "Marketing Spend" being the
-additional (but weaker) contributing factor
+```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.947
+Model:                            OLS   Adj. R-squared:                  0.945
+Method:                 Least Squares   F-statistic:                     849.8
+Date:                Mon, 09 Mar 2020   Prob (F-statistic):           3.50e-32
+Time:                        21:55:06   Log-Likelihood:                -527.44
+No. Observations:                  50   AIC:                             1059.
+Df Residuals:                      48   BIC:                             1063.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       4.903e+04   2537.897     19.320      0.000    4.39e+04    5.41e+04
+x1             0.8543      0.029     29.151      0.000       0.795       0.913
+==============================================================================
+Omnibus:                       13.727   Durbin-Watson:                   1.116
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               18.536
+Skew:                          -0.911   Prob(JB):                     9.44e-05
+Kurtosis:                       5.361   Cond. No.                     1.65e+05
+==============================================================================
+```
+As the adjusted R-squared has decreased, we will add the "Marketing Spend" predictor back into our model and declare this our optimal multiple linear regression model. We conclude that we should invest in companies that are investing highly in "R&D" (Research and Development), with "Marketing Spend" being the additional (but weaker) contributing factor.
 
+```
 X_opt = X[:,[0,3,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-#print(Reg_OLS.summary())
+print(Reg_OLS.summary())
+```
+
+Output:
+
+```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.950
+Model:                            OLS   Adj. R-squared:                  0.948
+Method:                 Least Squares   F-statistic:                     450.8
+Date:                Mon, 09 Mar 2020   Prob (F-statistic):           2.16e-31
+Time:                        21:57:34   Log-Likelihood:                -525.54
+No. Observations:                  50   AIC:                             1057.
+Df Residuals:                      47   BIC:                             1063.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       4.698e+04   2689.933     17.464      0.000    4.16e+04    5.24e+04
+x1             0.7966      0.041     19.266      0.000       0.713       0.880
+x2             0.0299      0.016      1.927      0.060      -0.001       0.061
+==============================================================================
+Omnibus:                       14.677   Durbin-Watson:                   1.257
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               21.161
+Skew:                          -0.939   Prob(JB):                     2.54e-05
+Kurtosis:                       5.575   Cond. No.                     5.32e+05
+==============================================================================
+```
+where X1 is R&D Spend and X2 is Marketing Spend.
+
