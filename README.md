@@ -15,4 +15,4 @@ We will be using Multiple Linear Regression to carry out this task.
 - Independence of errors
 - Lack of multicollinearity
 
-**Backwards Elimination:** In order to build an "optimal" multiple linear regression model, we use backwards elimination to find the optimal number of independent variables so that each variable has a significant impact on the dependent varaible (profit). In our case, we are using a 5% significance level (p-value = 0.05), therefore any predictor variable that has a p-value > 0.05 should be removed, and we will run the Regressor Ordinary Least Squares (Reg_OLS) again and observe the metrics thereafter.
+**Backwards Elimination:** In order to build an "optimal" multiple linear regression model, we use backwards elimination to find the optimal number of independent variables so that each variable has a significant impact on the dependent varaible (profit). In our case, we are using a 5% significance level (p-value = 0.05), therefore any predictor variable that has a p-value > 0.05 should be removed and we will run the Regressor Ordinary Least Squares (Reg_OLS) again and observe the metrics thereafter.
