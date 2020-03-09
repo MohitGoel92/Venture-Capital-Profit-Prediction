@@ -231,3 +231,9 @@ Kurtosis:                       5.575   Cond. No.                     5.32e+05
 ```
 where X1 is R&D Spend and X2 is Marketing Spend.
 
+Our regressor therefore takes the following function:
+
+```
+Profit = 46980 + (0.7966)X1 + (0.0299)X2
+```
+We conclude that R&D spend has a greater impact on profit per unit of R&D spend than Marketing Spend has per unit of marketing spend. For every one unit increase/decrease in R&D spend the Profit will increase/decrease be 0.7966 unit pounds.
