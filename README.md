@@ -96,7 +96,7 @@ Florida has the highest p-value (0.940 > 0.05) so that variable as been removed,
 ```
 X_opt = X[:,[0,3,4,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-#print(Reg_OLS.summary())
+print(Reg_OLS.summary())
 ```
 
 Output:
@@ -166,7 +166,7 @@ Marketing spend has the highest p-value (0.06 > 0.05)  so that variable as been 
 ```
 X_opt = X[:,[0,3]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
-#print(Reg_OLS.summary())
+print(Reg_OLS.summary())
 ```
 Output:
 
