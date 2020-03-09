@@ -13,3 +13,4 @@ We will be using Multiple Linear Regression to carry out this task.
 - Independence of errors
 - Lack of multicollinearity
 
+**Backwards Elimination:**
