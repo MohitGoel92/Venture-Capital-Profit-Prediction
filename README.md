@@ -1,6 +1,6 @@
 # Multiple-Linear-Regression
 
-We will explore be solving a simple business task using Multiple Linear Regression.
+We will be solving a simple business task using Multiple Linear Regression.
 
 **Task: Venture capital fund analysis** 
 
