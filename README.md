@@ -55,37 +55,68 @@ Skew:                          -0.948   Prob(JB):                     2.41e-05
 Kurtosis:                       5.572   Cond. No.                     1.45e+06
 ==============================================================================
 ```
-New York has the highest p-value (0.990>0.05) so that variable will be removed, we will run Reg_OLS and review the metrics again
+New York has the highest p-value (0.990 > 0.05) so that variable will be removed, we will run Reg_OLS and review the metrics
 
 ```
 X_opt = X[:,[0,1,3,4,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 print(Reg_OLS.summary())
 ```
-output:
+Output:
 
+```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.951
+Model:                            OLS   Adj. R-squared:                  0.946
+Method:                 Least Squares   F-statistic:                     217.2
+Date:                Mon, 09 Mar 2020   Prob (F-statistic):           8.49e-29
+Time:                        21:46:24   Log-Likelihood:                -525.38
+No. Observations:                  50   AIC:                             1061.
+Df Residuals:                      45   BIC:                             1070.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       5.011e+04   6647.870      7.537      0.000    3.67e+04    6.35e+04
+x1           220.1585   2900.536      0.076      0.940   -5621.821    6062.138
+x2             0.8060      0.046     17.606      0.000       0.714       0.898
+x3            -0.0270      0.052     -0.523      0.604      -0.131       0.077
+x4             0.0270      0.017      1.592      0.118      -0.007       0.061
+==============================================================================
+Omnibus:                       14.758   Durbin-Watson:                   1.282
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               21.172
+Skew:                          -0.948   Prob(JB):                     2.53e-05
+Kurtosis:                       5.563   Cond. No.                     1.40e+06
+==============================================================================
+```
 
-# Florida has the highest p-value (>0.05) so that variable as been removed, we will run Reg_OLS and review the metrics again
-
+Florida has the highest p-value (0.940 > 0.05) so that variable as been removed, we will run Reg_OLS and review the metrics
+```
 X_opt = X[:,[0,3,4,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 #print(Reg_OLS.summary())
+```
 
-# Administration has the highest p-value (>0.05) so that variable as been removed, we will run Reg_OLS and review the metrics again
+Output:
+
+
+Administration has the highest p-value (>0.05) so that variable as been removed, we will run Reg_OLS and review the metrics again
 
 X_opt = X[:,[0,3,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 #print(Reg_OLS.summary())
 
-# Marketing spend has the highest p-value (>0.05)  so that variable as been removed, we will run Reg_OLS and review the metrics again
+Marketing spend has the highest p-value (>0.05)  so that variable as been removed, we will run Reg_OLS and review the metrics again
 
 X_opt = X[:,[0,3]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 #print(Reg_OLS.summary())
 
-# As the adjusted R-squared has decreased, we will add the "Marketing Spend" variable back and declare this our multiple linear regression model
-# We conclude that we should invest in companies that are investing highly in "R&D" (Research and Development), with "Marketing Spend" being the
-# additional (but weaker) contributing factor
+As the adjusted R-squared has decreased, we will add the "Marketing Spend" variable back and declare this our multiple linear regression model
+We conclude that we should invest in companies that are investing highly in "R&D" (Research and Development), with "Marketing Spend" being the
+additional (but weaker) contributing factor
 
 X_opt = X[:,[0,3,5]]
 Reg_OLS = sm.OLS(endog = y, exog = X_opt).fit()
