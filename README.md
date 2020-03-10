@@ -1,4 +1,4 @@
-# Multiple-Linear-Regression
+# Multiple Linear Regression
 
 We will be solving a simple business task using Multiple Linear Regression.
 
