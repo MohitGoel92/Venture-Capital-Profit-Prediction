@@ -8,6 +8,14 @@ We have been given a dataset that contains a list of 50 companies with their yea
 
 We will be using Multiple Linear Regression to carry out this task.
 
+**Pros of Linear Regression:**
+
+Works on any size of dataset and gives us information about relevance of features.
+
+**Cons of Linear Regression:**
+
+The linear regression assumptions
+
 **Assumptions of a linear regression:**
 - Linearity
 - Homoscedasticity
