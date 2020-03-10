@@ -236,4 +236,8 @@ Our regressor therefore takes the following function:
 ```
 Profit = 46980 + (0.7966)X1 + (0.0299)X2
 ```
-We conclude that R&D spend has a greater impact on profit per unit of R&D spend than Marketing Spend has per unit of marketing spend. For every one unit increase/decrease in R&D spend the Profit will increase/decrease be 0.7966 unit pounds.
+**Note:**
+
+It is incorrect to make statements such as "R&D spend has a much larger impact on profit in comparison to Marketing spend" or "R&D's impact on profit is over 26 times more than Marketing spend". This is because, solely looking at the coefficients does not give us the unit measurements for theses predictors. For instance, if R&D spend was in £10,0000's and Marketing spend was is in £1,000's, the amount invested in each will differ substantially. Therefore, we conclude with the below statement:
+
+R&D spend has a greater impact on profit per unit of R&D spend than Marketing Spend has per unit of marketing spend. For every one unit increase/decrease in R&D spend, the Profit will increase/decrease by 0.7966 unit pounds.
