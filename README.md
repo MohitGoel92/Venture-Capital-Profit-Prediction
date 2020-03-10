@@ -10,11 +10,12 @@ We will be using Multiple Linear Regression to carry out this task.
 
 **Pros of Linear Regression:**
 
-Works on any size of dataset and gives us information about relevance of features.
+- Works on any size of dataset
+- Gives us information about relevance of features.
 
 **Cons of Linear Regression:**
 
-The linear regression assumptions
+- Linear regression assumptions
 
 **Assumptions of a linear regression:**
 - Linearity
